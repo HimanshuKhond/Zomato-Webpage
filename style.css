@@ -5,14 +5,16 @@
 
 body {
   font-family: 'Merriweather', serif;
-  background-color: #f9fafc;
+  background-color: #ebf2ff;
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #fff;
+  height: 50px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -2px rgb(0 0 0 / 5%);
+  background-color: white;
 }
 
 .navbar__brand {
@@ -23,38 +25,191 @@ body {
   width: 100%;
 }
 
-.nav__item {
+.button__primary {
   background-image: linear-gradient(
     to right,
     #ff512f 0%,
-     #dd2476 51%,
-     #ff512f 100%
-    );
-    color: #fff;
-    border: none;
-    padding: 12px;
-    border-radius: 6px;
-    font-weight: 600;
+    #dd2476 51%,
+    #ff512f 100%);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: 600;
 }
 
-.nav__item:hover {
-  border: 2px solid #FF6767;
+.button__primary:hover {
+  background-position: right center;
+  border: 2px solid #ff6767;
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
+.container {
+  max-width: 100%;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.hero__image__container {
+  width: 100%;
+}
+
+.hero__image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);;
+}
+
+.hero__text {
+  font-weight: 800;
+  font-size: 32px;
+  margin: 20px 0;
+  color: #1d3557;
+}
+
+.video__footage__container {
+  margin-top: 20px;
+}
+
+.video__footage {
+  width: 100%;
+}
+
+.yt__video {
+  width: 100%;
+  height: 200px;
+}
+
+.video__footage__text {
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  color: #1d3557;
+}
+
+.explore__menu__text {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 30px;
+  color: #1d3557;
+}
+
+.food__card {
+  background-color: #f9f9f9;
+}
+
+.food__card__image__container {
+  width: 100%;
+}
+
+.food__image {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.food__card__description {
+  padding: 15px;
+}
+
+/* TabletView */
+@media (min-width: 768px) { 
   .navbar {
     justify-content: space-between;
     padding: 10px 30px;
   }
+
+  .hero__container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .video__footage__container {
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+  }
+
+  .explore__menu__container {
+    position: relative;
+  }
+
+  .explore__menu__gradient__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to right,
+      #ff512f 0%,
+      #dd2476 51%,
+      #ff512f 100%);
+    z-index: -3;
+    transform: skewY(-5deg);
+  }
+
+  .explore__menu__lists {
+    display: flex;
+    gap: 15px;
+    margin-top: 60px;
+    padding: 0 30px;
+  }
+
+  #pizza__card {
+    margin-top: -20px;
+    margin-bottom: 30px;
+  }
+
 }
 
+/* DesktopView */
 @media (min-width: 1024px) {
-   .navbar__brand {
-     width: 150px;
-   }
-   .nav__item {
-     padding: 20px;
-     font-size: 20px;
-   }
+  .container {
+    max-width: 75%;
+  }
+
+  .button__primary {
+    padding: 15px 30px;
+    font-size: 15px;
+  }
+
+  .hero__description {
+    width: 100%;
+  }
+
+  .hero__text {
+    font-size: 45px;
+  }
+
+  .video__footage__container {
+    flex-direction: column;
+  }
+
+  .video__footage {
+    margin-top: 20px;
+    max-width: 30%;
+  }
+
+  .yt__video {
+    width: 100%;
+  }
+
+  .video__footage__text {
+    width: 70%;
+    margin-top: 20px;
+  }
+
+  .explore__menu__lists {
+    gap: 25px;
+  }
+
+  .explore__menu__text {
+    font-size: 48px;
+  }
+
+
 }
